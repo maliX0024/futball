@@ -1006,12 +1006,12 @@ namespace Futball.EditorTools
         }
 
         // ---- Presets for your sound table ----
-        public static float[] KickSoft()   => Sine decaying(120f, 0.14f, 28f, 0.55f);
-        public static float[] KickMedium() => Sine decaying(190f, 0.13f, 32f, 0.70f, addClick: true);
+        public static float[] KickSoft()   => SineDecaying(120f, 0.14f, 28f, 0.55f);
+        public static float[] KickMedium() => SineDecaying(190f, 0.13f, 32f, 0.70f, addClick: true);
         public static float[] KickHard()   => KickHardWave();
         public static float[] Charge()     => RisingWhine();
         public static float[] Roll()       => RollRumble();
-        public static float[] Bounce()     => Sine decaying(220f, 0.09f, 38f, 0.45f);
+        public static float[] Bounce()     => SineDecaying(220f, 0.09f, 38f, 0.45f);
         public static float[] PostClank()  => MetalClank();
         public static float[] NetSoft()    => FabricSwish(0.18f, 0.25f);
         public static float[] NetHard()    => FabricSwish(0.22f, 0.45f);
@@ -1024,7 +1024,7 @@ namespace Futball.EditorTools
         public static float[] Coin()       => CoinDing();
 
         // ---- Generators ----
-        static float[] Sine decaying(float freq, float dur, float decay, float vol, bool addClick = false)
+        static float[] SineDecaying(float freq, float dur, float decay, float vol, bool addClick = false)
         {
             int len = (int)(SampleRate * dur);
             var s = new float[len];
